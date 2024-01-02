@@ -1,0 +1,9 @@
+
+
+1. Validate phone number =======> DONE
+2. Make sure image or file is not appearing twice
+3. Add a spinner when sending email verification
+4. Make the table responsive on phone
+
+=========================SECURITY=====================
+5. Security (Safe guard data in forms)

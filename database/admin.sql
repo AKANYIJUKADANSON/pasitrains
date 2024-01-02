@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2023 at 05:58 PM
+-- Generation Time: Jan 02, 2024 at 08:03 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `admin` (
   `id` int(20) NOT NULL,
   `name` varchar(100) NOT NULL,
+  `role` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(50) NOT NULL,
   `status` int(5) NOT NULL DEFAULT 1
@@ -39,8 +40,8 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `name`, `email`, `password`, `status`) VALUES
-(1, 'JOHN PAUL PANDIYA', 'john1@gmail.com', '123', 1);
+INSERT INTO `admin` (`id`, `name`, `role`, `email`, `password`, `status`) VALUES
+(1, 'DOREEN AKANKWASA', 'DEAN', 'doreen@gmail.com', '123', 1);
 
 --
 -- Indexes for dumped tables

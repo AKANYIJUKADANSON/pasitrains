@@ -76,7 +76,7 @@
 <!-- End Header -->
 
     <main>
-        <div style="height: 85vh; border: 1px solid white; background: url(assets/uploads/hero_bg.png); background-size: cover;">
+        <div style="height: 85vh; border: 1px solid white; background: url(assets/img/hero_bg.png); background-size: cover;">
 
         <h2 class="text-center text-primary" style="margin-top: 15%; font-size: 80px">Secure shredding services</h2>
 

@@ -81,14 +81,12 @@ if (isset($_POST['enrole'])) {
     $_SESSION['training'] = $_POST['training'];
     $_SESSION['initial'] = $_POST['initial'];
     $_SESSION['duration']  = $_POST['duration'];
-    $_SESSION['start_date'] = $_POST['start_date'];
 }
 
 
 $course_selected = $_SESSION['training'];
 $initial = $_SESSION['initial'];
 $duration = $_SESSION['duration'];
-$start_date = $_SESSION['start_date'];
 
 $reg_no = generateRegNo($initial, 'Africa/Nairobi');
 
@@ -147,15 +145,15 @@ if (isset($_POST['apply'])) {
                 if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)) {
                     // Insert image file name and post data into database 
 
-                    $insert = "INSERT INTO applications(firstName, middleName, lastName, reg_no, course, duration, start_date, dob, gender, employer, country, city, postalAddress, profilePicture, email, phone, reg_date, verify_token)
-                    VALUES('$fname', '$mname', '$lname', '$reg_no','$course_selected', '$duration', '$start_date', '$dob', '$gender', '$employer', '$country', '$city', '$pobox', '$imageName', '$useremail', '$phone', '$date_of_registration', '$verify_token')";
+                    $insert = "INSERT INTO applications(firstName, middleName, lastName, reg_no, course, duration, dob, gender, employer, country, city, postalAddress, profilePicture, email, phone, reg_date, verify_token)
+                    VALUES('$fname', '$mname', '$lname', '$reg_no','$course_selected', '$duration', '$dob', '$gender', '$employer', '$country', '$city', '$pobox', '$imageName', '$useremail', '$phone', '$date_of_registration', '$verify_token')";
 
                     // $stmt = "INSERT INTO applications(firstName, middleName, lastName)VALUES('$fname', '$mname', '$lname')";
 
                     $query_run = mysqli_query($conn, $insert);
 
 
-                    // echo $reg_no, $course_selected, $course_initial, $duration, $start_date, $fname, $mname, $lname, $dob, $gender, $employer, $country, $city, $pobox, $phone, $email, $date_of_registration;
+                    // echo $reg_no, $course_selected, $course_initial, $duration, $fname, $mname, $lname, $dob, $gender, $employer, $country, $city, $pobox, $phone, $email, $date_of_registration;
 
                     if ($query_run) {
                         // Sending a verification token to the email
@@ -164,12 +162,12 @@ if (isset($_POST['apply'])) {
                         session_unset();
                         $_SESSION['reg_no'] = $reg_no;
                         // header('location:email-verification.php');
-                        ?>
-                            <script>
-                                // alert("No course was selected, Please select a course to proceed");
-                                window.location.href = "email-verification.php";
-                            </script>
-                        <?php
+?>
+                        <script>
+                            // alert("No course was selected, Please select a course to proceed");
+                            window.location.href = "email-verification.php";
+                        </script>
+<?php
                     } else {
                         $_SESSION['status'] = "Error while saving your application, please try again";
                         $_SESSION['color'] = "danger";
@@ -185,10 +183,10 @@ if (isset($_POST['apply'])) {
         } else {
             $imageName = "default_img.png";
 
-            // echo $reg_no, $course_selected, $initial, $duration, $start_date, $fname, $mname, $lname, $dob, $gender, $employer, $country, $city, $pobox, $phone, $email, $date_of_registration;
+            // echo $reg_no, $course_selected, $initial, $duration, $fname, $mname, $lname, $dob, $gender, $employer, $country, $city, $pobox, $phone, $email, $date_of_registration;
 
 
-            $insert = "INSERT INTO applications(firstName, middleName, lastName, reg_no, course, duration, start_date, dob, gender, employer, country, city, postalAddress, profilePicture, email, phone, reg_date, verify_token)VALUES('$fname', '$mname', '$lname', '$reg_no','$course_selected', '$duration', '$start_date', '$dob', '$gender', '$employer', '$country', '$city', '$pobox', '$imageName', '$useremail', '$phone', '$date_of_registration','$verify_token')";
+            $insert = "INSERT INTO applications(firstName, middleName, lastName, reg_no, course, duration, dob, gender, employer, country, city, postalAddress, profilePicture, email, phone, reg_date, verify_token)VALUES('$fname', '$mname', '$lname', '$reg_no','$course_selected', '$duration', '$dob', '$gender', '$employer', '$country', '$city', '$pobox', '$imageName', '$useremail', '$phone', '$date_of_registration','$verify_token')";
 
             $query_run = mysqli_query($conn, $insert);
 
@@ -220,7 +218,12 @@ if (isset($_POST['apply'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon/favicon-16x16.png">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <!-- icons -->
@@ -318,10 +321,6 @@ if (isset($_POST['apply'])) {
 
             <div class="col-md-3 ">
                 <h4><b>Duration:</b> <span class="text-secondary"><?= $duration; ?></span></h4>
-            </div>
-
-            <div class="col-md-3">
-                <h4><b>Starting On:</b> <span class="text-secondary"><?= $start_date; ?></span></h4>
             </div>
         </div>
 

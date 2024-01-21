@@ -17,7 +17,6 @@ if (!empty($posted_reg_no)) {
     $appRegNo = $applicant['reg_no'];
     $appCourse = $applicant['course'];
     $courseDuration = $applicant['duration'];
-    $startDate = $applicant['start_date'];
     $dob = $applicant['dob'];
     $gender = $applicant['gender'];
     $employer = $applicant['employer'];
@@ -80,7 +79,7 @@ if (!empty($posted_reg_no)) {
                             </li>
 
                             <li class="nav-item">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
+                                <!-- <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button> -->
                             </li>
                         </ul>
 

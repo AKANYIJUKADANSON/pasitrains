@@ -42,7 +42,7 @@ body{
 
 /* ========Page loader============== */
 .spinner-wrapper{
-    background-color: deeppink;
+    background-color: rgb(139, 155, 161);
     position: fixed;
     top: 0;
     left: 0;

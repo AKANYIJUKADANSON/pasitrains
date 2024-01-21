@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 02, 2024 at 08:03 PM
+-- Generation Time: Jan 20, 2024 at 06:40 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -35,7 +35,6 @@ CREATE TABLE `applications` (
   `reg_no` varchar(100) NOT NULL,
   `course` varchar(200) NOT NULL,
   `duration` varchar(50) NOT NULL,
-  `start_date` varchar(50) NOT NULL,
   `dob` date NOT NULL,
   `gender` varchar(50) NOT NULL,
   `employer` varchar(50) NOT NULL,
@@ -56,8 +55,9 @@ CREATE TABLE `applications` (
 -- Dumping data for table `applications`
 --
 
-INSERT INTO `applications` (`id`, `firstName`, `middleName`, `lastName`, `reg_no`, `course`, `duration`, `start_date`, `dob`, `gender`, `employer`, `country`, `city`, `postalAddress`, `profilePicture`, `email`, `phone`, `reg_date`, `verify_token`, `applicationStatus`, `emailVerifStatus`, `approvedBy`) VALUES
-(38, 'Danielaaaa', '', 'DANSON', '23/TR/MRMT/1219213129', 'Modern Records Management training', '2 Months', '2023-11-27', '2023-12-13', 'FEMALE', 'TotalEnergies', 'Uganda', 'KAMPALA', 'P.O. Box 46, Kyambogo', '_32A4697.JPG', 'akanyijuka1danson@gmail.com', '+256779264619', '2023-12-19', 8335, 0, 0, NULL);
+INSERT INTO `applications` (`id`, `firstName`, `middleName`, `lastName`, `reg_no`, `course`, `duration`, `dob`, `gender`, `employer`, `country`, `city`, `postalAddress`, `profilePicture`, `email`, `phone`, `reg_date`, `verify_token`, `applicationStatus`, `emailVerifStatus`, `approvedBy`) VALUES
+(38, 'Danielaaaa', '', 'DANSON', '23/TR/MRMT/1219213129', 'Modern Records Management training', '2 Months', '2023-12-13', 'FEMALE', 'TotalEnergies', 'Uganda', 'KAMPALA', 'P.O. Box 46, Kyambogo', '_32A4697.JPG', 'akanyijuka1danson@gmail.com', '+256779264619', '2023-12-19', 8335, 1, 0, 'DOREEN AKANKWASA'),
+(39, 'AKANYIJUKA', 'ROBERT', 'DANSON', '24/TR/IFRS/0120201858', 'International Financial Reporting Standards', '5 Days', '2024-01-10', 'MALE', 'TotalEnergies', 'Uganda', 'KAMPALA', 'P.O. Box 1, Kyambogo', 'cool bg.JPG', 'akanyijuka1danson@gmail.com', '0757542857', '2024-01-20', 2504, 1, 1, 'DOREEN AKANKWASA');
 
 --
 -- Indexes for dumped tables
@@ -77,7 +77,7 @@ ALTER TABLE `applications`
 -- AUTO_INCREMENT for table `applications`
 --
 ALTER TABLE `applications`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
